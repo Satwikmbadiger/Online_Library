@@ -1,106 +1,105 @@
-Online Library Management System
+<h1>Online Library Management System</h1>
 
-Overview
+<h2>Overview</h2>
 The Online Library Management System is a web application built using Django and Django-Ninja that allows users to manage books in a library, including borrowing and returning them. The system supports different user roles, including superusers/admin, and regular-users, each with different levels of access and functionality.
 
-Features
+<h2>Features</h2>
 
-User Management:
+<h3>User Management:</h3>
 Signup and signin functionality.
 Profile management, including updating and deleting accounts.
 User roles: Superuser/Admin and Regular-users.
 
-Book Management:
+<h3>Book Management:</h3>
 Admin functionalities for adding, updating, deleting, and viewing books.
 Users can view available books, borrow them, and return them.
 Track borrowed books and their status.
 
-Error Handling:
+<h3>Error Handling:</h3>
 Unified error handling with user-friendly messages.
+<br>
+<h2>Installation</h2>
 
-
-Installation
-
-Prerequisites
+<h3>Prerequisites</h3>
 Python 3.x
 Django
 Django-Ninja
 
 
-Setup
-Clone the repository:
+<h3>Setup</h3>
+<h3>Clone the repository:
 
-bash
+<h3>bash</h3>
 Copy code
 git clone https://github.com/yourusername/your-repository.git
 cd your-repository
 Create a virtual environment:
 
-bash
+<h3>bash</h3>
 Copy code
 python -m venv venv
 Activate the virtual environment:
 
-On Windows:
+<h3>On Windows:</h3>
 
-bash
+<h3>bash</h3>
 Copy code
 venv\Scripts\activate
 On macOS/Linux:
 
-bash
+<h3>bash</h3>
 Copy code
 source venv/bin/activate
 Install dependencies:
 
-bash
+<h3>bash</h3>
 Copy code
 pip install -r requirements.txt
 Apply migrations:
 
-bash
+<h3>bash</h3>
 Copy code
 python manage.py migrate
 Create a superuser (if necessary):
 
-bash
+<h3>bash</h3>
 Copy code
 python manage.py createsuperuser
 Run the development server:
 
-bash
+<h3>bash</h3>
 Copy code
 python manage.py runserver
 Access the application:
 
-Open your web browser and navigate to http://127.0.0.1:8000/.
+Open your web browser and navigate to http://127.0.0.1:8000/.</h3>
 
-Usage
+<h2>Usage</h2>
 
-The Online Library Management System supports the following functionalities:
-Signup: Register a new account through the signup page.
-Signin: Log in using your credentials.
-Profile: Manage your profile, update details, or delete your account.
-Books: Admin users can manage books, while regular users can view, borrow, and return books.
-Error Handling: All errors are handled gracefully with user-friendly messages.
-Dashboard: View the dashboard with relevant information based on your user role.
+<h3>The Online Library Management System supports the following functionalities:</h3>
+<h3>Signup:</h3> Register a new account through the signup page.
+<h3>Signin:</h3> Log in using your credentials.
+<h3>Profile:</h3> Manage your profile, update details, or delete your account.
+<h3>Books:</h3> Admin users can manage books, while regular users can view, borrow, and return books.
+<h3>Error Handling:</h3> All errors are handled gracefully with user-friendly messages.
+<h3>Dashboard:</h3> View the dashboard with relevant information based on your user role.
 
-File Structure
+<h2>File Structure</h2>
 
 Check the directory structure for refernce...
 
-Contributing
+<h2>Contributing</h2>
 
-Contributions are welcome! Here's how you can contribute to this project-
-Fork the repository.
-Create a new branch (git checkout -b feature-branch).
-Make your changes.
-Commit your changes (git commit -am 'Add new feature').
-Push to the branch (git push origin feature-branch).
-Create a pull request.
+<h3>Contributions are welcome! Here's how you can contribute to this project-</h3>
+Fork the repository.<br>
+Create a new branch (git checkout -b feature-branch).<br>
+Make your changes.<br>
+Commit your changes (git commit -am 'Add new feature').<br>
+Push to the branch (git push origin feature-branch).<br>
+Create a pull request.<br>
 
-License
-This project is open source.
+<h2>License</h2>
+This project is open source and licensed using MT Licence.
 
-Contact
+<h2>Contact</h2>
 For any inquiries or issues, please contact satwikmbadiger@gmail.com.
