@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <a href="{% url 'book_list' %}">Go Back</a>
+
+    <h1>{{ book.title }}</h1>
+
+    {% if book.cover %}
+        <img src="{{ book.cover.url }}" alt="{{ book.title }} cover" style="max-width: 200px;">
+    {% else %}
+        <p>No cover image available.</p>
+    {% endif %}
+
+    <p><strong>Author:</strong> {{ book.author }}</p>
+    <p><strong>Genre:</strong> {{ book.genre }}</p>
+    <p><strong>Published at:</strong> {{ book.published_at }}</p>
+    <p><strong>ISBN:</strong> {{ book.isbn }}</p>
+    <p><strong>Available copies:</strong> {{ book.available_copies }}</p>
+    <p><strong>Description: <br> </strong> {{ book.description }}</p>
+
+{% endblock %}

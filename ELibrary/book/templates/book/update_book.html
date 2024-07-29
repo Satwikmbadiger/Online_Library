@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <ul>
+        <li>
+            <a href="{% url 'dashboard' %}">Dashboard</a>
+        </li>
+        <li>
+            <a href="{% url 'book_list' %}">Go Back</a>
+        </li>
+    </ul>
+    <hr>
+    <h1>Edit Book</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br>
+        <button type="submit">Save</button>
+    </form>
+
+{% endblock %}

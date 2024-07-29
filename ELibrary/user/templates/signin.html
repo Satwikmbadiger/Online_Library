@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signin</title>
+</head>
+<body>
+    <h1>Signin</h1>
+    <p>Signin to start using the community...</p>
+    <hr>
+    <br>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Signin</button>
+    </form>
+    <br>
+    <br>
+    <a href="{% url 'signup' %}">Don't have an account? Signup</a>
+</body>
+</html>

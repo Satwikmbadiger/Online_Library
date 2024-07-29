@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ book.title }}</title>
+</head>
+<body>
+    <h1>ELibrary</h1>
+    <ul>
+        {% if user.is_superuser %}
+        <li>
+            <a href="{% url 'book_list' %}">Back to books list</a>
+        </li>
+        {% else %}
+        <li>
+            <a href="{% url 'available_books' %}">Back to available books</a>
+        </li>
+        {% endif %}
+    </ul>
+    <hr>
+
+    {% if user.is_superuser %}
+
+    <h2>{{ book.title }}</h2>
+    {% if book.cover %}
+        <img src="{{ book.cover.url }}" alt="{{ book.title }} cover" style="max-width: 200px;">
+        <br>
+    {% else %}
+        <p>No cover image available.</p>
+    {% endif %}
+    <br>
+    <p><strong>Author:</strong> {{ book.author }}</p>
+    <p><strong>Genre:</strong> {{ book.genre }}</p>
+    <p><strong>Published at:</strong> {{ book.published_at }}</p>
+    <p><strong>ISBN:</strong> {{ book.isbn }}</p>
+    <p><strong>Available copies:</strong> {{ book.available_copies }}</p>
+    <p><strong>Description: <br> </strong> {{ book.description }}</p>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+
+    {% else %}
+
+    <h2>{{ book.title }}</h2>
+    {% if book.cover %}
+        <img src="{{ book.cover.url }}" alt="{{ book.title }} cover" style="max-width: 200px;">
+        <br>
+    {% else %}
+        <p>No cover image available.</p>
+    {% endif %}
+
+    {% if user_borrowed %}
+    <br>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" name="return">Return Book</button>
+    </form>
+    {% else %}
+    {% if book.available_copies > 0 %}
+        <br>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" name="borrow">Borrow Book</button>
+        </form>
+    {% else %}
+        <p>No available copies</p>
+    {% endif %}
+    <br>
+    <p><strong>Author:</strong> {{ book.author }}</p>
+    <p><strong>Genre:</strong> {{ book.genre }}</p>
+    <p><strong>Published at:</strong> {{ book.published_at }}</p>
+    <p><strong>ISBN:</strong> {{ book.isbn }}</p>
+    <p><strong>Available copies:</strong> {{ book.available_copies }}</p>
+    <p><strong>Description: <br> </strong> {{ book.description }}</p>
+    {% endif %}
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    {% endif %}
+</body>
+</html>

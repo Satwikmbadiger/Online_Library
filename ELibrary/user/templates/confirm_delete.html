@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Account Deletion</title>
+</head>
+<body>
+    <h1>Confirm Account Deletion</h1>
+    <hr>
+    <br>
+    <p>Are you sure you want to delete your account? This action cannot be undone.</p>
+    <br>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, Delete My Account</button>
+        <br>
+        <br>
+        <a href="{% url 'profile' %}"><h3>Cancel</h3></a>
+    </form>
+</body>
+</html>

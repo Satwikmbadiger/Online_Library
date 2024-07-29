@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Welcome to ELibrary</h1>
+<p>ELibrary is a digital library that allows you to borrow and read books online.</p>
+<br>
+
+<ul>
+<li>
+    <a href="{% url 'signin' %}"><strong>Login To Start Using The Community...</strong></a></p>
+</li>
+<br>
+<li>
+    <a href="{% url 'signup' %}"><strong>Register Now If You Are A New user!!!</strong></a>
+</li>
+</ul>
+
+{% endblock %}

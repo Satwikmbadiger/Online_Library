@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Borrow History</title>
+</head>
+<body>
+    <h1>My Borrow History</h1>
+    <ul>
+        <li>
+            <a href="{% url 'dashboard' %}">Dashboard</a>
+        </li>
+    </ul>
+    <hr>
+    <br
+    <ul>
+    {% for borrow in borrows %}
+        <li>
+            <strong>Book:</strong> {{ borrow.book.title }} - 
+            <strong>Borrowed At:</strong> {{ borrow.borrowed_at }} - 
+            <strong>Returned At:</strong> {% if borrow.returned_at %} {{ borrow.returned_at }} {% else %} Not Returned {% endif %}
+        </li>
+    {% empty %}
+        <li>You have no borrow history.</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

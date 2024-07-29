@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<body>
+    <h1>Profile</h1>
+    <ul>
+        <li>
+            <a href="{% url 'dashboard' %}">dashboard</a>
+        </li>
+    </ul>
+    <hr>
+    <br>
+    <p><strong>Username:</strong> {{ username }}</p>
+    <p><strong>First Name:</strong> {{ first_name }}</p>
+    <p><strong>Last Name:</strong> {{ last_name }}</p>
+    <p><strong>Email:</strong> {{ email }}</p>
+    <p><strong>Created At:</strong> {{ date_joined }}</p>
+    <br>
+    <ul>
+        <li>
+            <a href="{% url 'signout' %}"><h3>Signout</h3></a>
+        </li>
+        <li>
+            <a href="{% url 'update_profile' %}"><h3>Update Profile</h3></a>
+        </li>
+        <li>
+            <a href="{% url 'delete_account' %}" style="color: red;"><h3>Delete Account</h3></a>
+        </li>
+    </ul>
+</body>
+</html>

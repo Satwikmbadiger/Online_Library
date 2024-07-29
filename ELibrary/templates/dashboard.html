@@ -1,0 +1,43 @@
+{% if user.is_superuser %}
+    <head>
+        <title>Admin</title>
+    </head>
+    <body>
+        <h1>ELibrary</h1>
+        <hr>
+        <h1>Admin Dashboard</h1>
+        <ul>
+            <li>
+                <a href="{% url 'book_list' %}">Books Dashboard</a>
+            </li>
+            <li>
+                <a href="{% url 'user_list' %}">User List</a>
+            </li>
+            <li>
+                <a href="{% url 'superuser_borrow_history' %}">Borrow History</a>
+            </li>
+            <li>
+                <a href="{% url 'available_books' %}">Available Books</a>
+            </li>
+        </ul>
+    </body>
+{% else %}
+    <head>
+        <title>Dashboard</title>
+    </head>
+    <h1>ELibrary</h1>
+    <hr>
+    <h1>Dashboard</h1>
+    <p>Welcome, {{ user.username }}!</p>
+    <ul>
+        <li>
+            <a href="{% url 'profile' %}">Profile</a>
+        </li>
+        <li>
+            <a href="{% url 'available_books' %}">Available Books</a>
+        </li>
+        <li>
+            <a href="{% url 'user_borrow_history' %}">My Borrow History</a>
+        </li>
+    </ul>
+{% endif %}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available Books</title>
+</head>
+<body>
+    <h1>ELibrary</h1>
+    <ul>
+        <li>
+            <a href="{% url 'dashboard' %}">Dashboard</a>
+        </li>
+    </ul>
+    <hr>
+    <h1>Available Books</h1>
+    <p>Here are the books available for borrowing:</p>
+    <ul><br>
+    {% for book in books %}
+        <li>
+            <a href="{% url 'book_detail' book.id %}">{{ book.title }}</a>
+            (Available Copies: {{ book.available_copies }})
+            <br>
+        </li>
+    {% empty %}
+        <li>No books available.</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
